@@ -7,6 +7,7 @@ const route2020 = require("./routes/2020.js");
 const route2021 = require("./routes/2021.js");
 const route2023 = require("./routes/2023.js");
 const SelfStudy = require("./routes/SelfStudy.js");
+const routeBase = require("./routes/Base.js");
 const { defaultTheme } = require("vuepress-webpack");
 let englishFiles = ["/english/introduction.md"];
 englishFiles = englishFiles.concat(
@@ -19,7 +20,7 @@ englishFiles = englishFiles.concat(
 );
 let studyFiles = ["/study/introduction.md"];
 studyFiles = studyFiles.concat(
-route基础知识
+  routeBase
 );
 const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
 module.exports = {
@@ -65,7 +66,7 @@ module.exports = {
       {
         text: "学习点滴",
         link: "/study/introduction",
-        activeMatch: "^/study/[基础知识]",
+        activeMatch: "^/study/*",
       },
       {
         text: "汉语言文学",
