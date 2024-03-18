@@ -8,6 +8,7 @@ const route2021 = require("./routes/2021.js");
 const route2023 = require("./routes/2023.js");
 const SelfStudy = require("./routes/SelfStudy.js");
 const routeBase = require("./routes/Base.js");
+const routelife = require("./routes/Life.js")
 const { defaultTheme } = require("vuepress-webpack");
 let englishFiles = ["/english/introduction.md"];
 englishFiles = englishFiles.concat(
@@ -21,12 +22,10 @@ englishFiles = englishFiles.concat(
 let studyFiles = ["/study/introduction.md"];
 studyFiles = studyFiles.concat(
   routeBase,
-  route2023,
-  SelfStudy,
-  route2021,
-  route2020,
-  route2019,
-  route2018
+);
+let lifeFiles = ["/life/introduction.md"];
+lifeFiles = lifeFiles.concat(
+  routelife,
 );
 const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
 module.exports = {
@@ -121,6 +120,8 @@ module.exports = {
     sidebarDepth: 3,
     sidebar: {
       "/english/": englishFiles,
+      "/study/": studyFiles,
+      "/life/": lifeFiles,
       "/music/": [
         "/music/introduction.md",
         {
