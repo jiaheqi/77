@@ -4,7 +4,7 @@ module.exports = [
 	{
 		text: 'Charles',
 		collapsible: true,
-		children: genSidebarConfig('study/基础知识/Charles', false)
+		children: genSidebarConfig('study/Base/Charles', false)
 	},
 	{
 		text: '2018年十一月(November)',
