@@ -19,8 +19,8 @@ englishFiles = englishFiles.concat(
 );
 const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
 module.exports = {
-  title: "rty-docs",
-  description: "Welcome to my docs",
+  title: "77-docs",
+  description: "Welcome to 77's docs",
   plugins: [
     docsearchPlugin({
       appId: "PFAMZDC9Z4",
@@ -41,13 +41,13 @@ module.exports = {
       {
         name: "keywords",
         content:
-          "rty,荣天阳,rtyxmd,英文阅读,英语学习,vue组件,vue,英文歌曲,bruno",
+          "77",
       },
     ],
   ],
   theme: defaultTheme({
-    repo: "https://github.com/jgsrty",
-    docsRepo: "https://github.com/jgsrty/jgsrty.github.io",
+    repo: "https://jiaheqi.github.io/77/",
+    docsRepo: "https://jiaheqi.github.io/77/",
     docsBranch: "master",
     contributorsText: "贡献者",
     editLinkText: "在GitHub上编辑此页",
@@ -57,6 +57,14 @@ module.exports = {
       {
         text: "主页",
         link: "/",
+      },
+      {
+        text: "学习点滴",
+        link: "/study/introduction",
+        activeMatch: "^/study/*",
+        children: [
+          "/study/基础知识/Charles/Charles的激活",
+        ],
       },
       {
         text: "汉语言文学",
@@ -73,11 +81,11 @@ module.exports = {
         link: "/music/introduction",
         activeMatch: "^/music/",
       },
-      // {
-      //   text: "组件",
-      //   link: "/components/introduction",
-      //   activeMatch: "^/components/",
-      // },
+      {
+        text: "组件",
+        link: "/components/introduction",
+        activeMatch: "^/components/",
+      },
       {
         text: "口语短文",
         link: "/oral/introduction",

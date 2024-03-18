@@ -1,7 +1,7 @@
 {
-  "name": "jgsrty.github.docs",
+  "name": "77.github.docs",
   "version": "1.0.0",
-  "description": "rty docs",
+  "description": "77 docs",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -20,7 +20,7 @@
     "docs",
     "rty"
   ],
-  "author": "rty",
+  "author": "77",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jgsrty/jgsrty.github.docs/issues"
