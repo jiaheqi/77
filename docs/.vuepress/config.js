@@ -20,7 +20,13 @@ englishFiles = englishFiles.concat(
 );
 let studyFiles = ["/study/introduction.md"];
 studyFiles = studyFiles.concat(
-  routeBase
+  routeBase,
+  route2023,
+  SelfStudy,
+  route2021,
+  route2020,
+  route2019,
+  route2018
 );
 const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
 module.exports = {
@@ -66,7 +72,12 @@ module.exports = {
       {
         text: "学习点滴",
         link: "/study/introduction",
-        activeMatch: "^/study/*",
+        activeMatch: "^/study/[Base,2018,2019,2020,2021]",
+      },
+      {
+        text: "生活",
+        link: "/life/introduction",
+        activeMatch: "^/life/",
       },
       {
         text: "汉语言文学",
