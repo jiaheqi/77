@@ -48,9 +48,9 @@ module.exports = {
         link: "/",
       },
       {
-        text: "guide",
-        link: "/guide/",
-        activeMatch: "^/guide/*",
+        text: "工作",
+        link: "/work/",
+        activeMatch: "^/work/*",
       },
       {
         text: "学习点滴",

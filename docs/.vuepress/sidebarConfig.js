@@ -4,8 +4,10 @@ const route2020 = require("./routes/2020.js");
 const route2021 = require("./routes/2021.js");
 const route2023 = require("./routes/2023.js");
 const SelfStudy = require("./routes/SelfStudy.js");
-const routeCharles = require("./routes/Base.js");
+const routeBase = require("./routes/Base.js");
 const routelife = require("./routes/Life.js");
+const routeProject = require("./routes/Project.js");
+
 let englishFiles = ["/english/introduction.md"];
 englishFiles = englishFiles.concat(
   route2023,
@@ -21,7 +23,11 @@ lifeFiles = lifeFiles.concat(
 );
 let studyFiles = ["/study/introduction.md"];
 studyFiles = studyFiles.concat(
-    routeCharles,
+  routeBase,
+);
+let workFiles = ["/work/introduction.md"];
+workFiles = workFiles.concat(
+    routeProject,
 );
 
 let sidebar={};

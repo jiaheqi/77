@@ -2,8 +2,8 @@ const genSidebar = require('./getSideBar')
 
 module.exports = [
 	{
-		text: 'Charles',
+		text: '测试工作',
 		collapsible: true,
-		children: genSidebar('study/Charles', false)
+		children: genSidebar('work/project/test', false)
 	}
 ]
