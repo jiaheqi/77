@@ -8,13 +8,13 @@ const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
 module.exports = {
   title: "77-docs",
   description: "Welcome to 77's docs",
-  plugins: [
-    docsearchPlugin({
-      appId: "PFAMZDC9Z4",
-      apiKey: "b528d6541463420ac954f7fca1565180",
-      indexName: "jgsrty",
-    }),
-  ],
+  // plugins: [
+  //   docsearchPlugin({
+  //     appId: "PFAMZDC9Z4",
+  //     apiKey: "b528d6541463420ac954f7fca1565180",
+  //     indexName: "jgsrty",
+  //   }),
+  // ],
   head: [
     [
       "link",
@@ -151,7 +151,7 @@ module.exports = {
   themeConfig: {
     lastUpdated: "Last Updated",
     //编辑
-    repo: "jgsrty/jgsrty.github.docs",
+    repo: "jiaheqi.github.io/77/",
     docsDir: "docs",
     docsBranch: "master",
     editLinks: true,
