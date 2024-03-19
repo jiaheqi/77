@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs')
-module.exports = function genSidebarConfig(dir, hasSub) {
+module.exports = 
+function genSidebarConfig(dir, hasSub) {
     let p = path.join(__dirname, '../../', dir)
     let files = fs.readdirSync(p)
     let subDir = hasSub

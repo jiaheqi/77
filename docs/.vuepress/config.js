@@ -1,32 +1,10 @@
 const { webpackBundler } = require("@vuepress/bundler-webpack");
 const path = require("path");
 const fs = require("fs");
-const route2018 = require("./routes/2018.js");
-const route2019 = require("./routes/2019.js");
-const route2020 = require("./routes/2020.js");
-const route2021 = require("./routes/2021.js");
-const route2023 = require("./routes/2023.js");
-const SelfStudy = require("./routes/SelfStudy.js");
-const routeBase = require("./routes/Base.js");
 const routelife = require("./routes/Life.js")
 const { defaultTheme } = require("vuepress-webpack");
-let englishFiles = ["/english/introduction.md"];
-englishFiles = englishFiles.concat(
-  route2023,
-  SelfStudy,
-  route2021,
-  route2020,
-  route2019,
-  route2018
-);
-let studyFiles = ["/study/introduction.md"];
-studyFiles = studyFiles.concat(
-  routeBase,
-);
-let lifeFiles = ["/life/introduction.md"];
-lifeFiles = lifeFiles.concat(
-  routelife,
-);
+const sidebarConfig =  require("./sidebarConfig");
+
 const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
 module.exports = {
   title: "77-docs",
@@ -63,15 +41,21 @@ module.exports = {
     editLinkText: "在GitHub上编辑此页",
     editLinkPattern: ":repo/edit/:branch/docs/:path",
     lastUpdatedText: "上次更新",
+    // 顶部导航菜单
     navbar: [
       {
         text: "主页",
         link: "/",
       },
       {
+        text: "guide",
+        link: "/guide/",
+        activeMatch: "^/guide/*",
+      },
+      {
         text: "学习点滴",
         link: "/study/introduction",
-        activeMatch: "^/study/[Base,2018,2019,2020,2021]",
+        activeMatch: "^/study/*",
       },
       {
         text: "生活",
@@ -117,48 +101,64 @@ module.exports = {
         ],
       },
     ],
-    sidebarDepth: 3,
-    sidebar: {
-      "/english/": englishFiles,
-      "/study/": studyFiles,
-      "/life/": lifeFiles,
-      "/music/": [
-        "/music/introduction.md",
-        {
-          text: "Music Collection",
-          collapsible: false,
-          children: genSidebarConfig("music/collection", true),
-        },
-      ],
-      // "/components/": [
-      //   "/components/introduction.md",
-      //   {
-      //     text: "UI组件",
-      //     collapsible: false,
-      //     children: genSidebarConfig("components/UI", true),
-      //   },
-      // ],
-      "/oral/": [
-        "/oral/introduction.md",
-        {
-          text: "英语口语短文",
-          collapsible: false,
-          children: genSidebarConfig("oral/essay", true),
-        },
-      ],
-    },
+    sidebarDepth: 2,
+    // // 侧边栏：菜单
+    // sidebar: {
+    //   "/english/": englishFiles,
+    //   "/study/": studyFiles,
+    //   // "/study/": [
+    //   //   {
+    //   //     title: "Study",
+    //   //     collapsible: false,        
+    //   //     children: genSidebarConfig("study", false)
+    //   //   }
+    //   // ],
+    //   // "/study/": [
+    //   //   "/study/introduction.md",
+    //   //   {
+    //   //     text: "Study",
+    //   //     collapsible: false,
+    //   //     children: genSidebarConfig("study", true),
+    //   //   },
+    //   // ],
+    //   "/life/": lifeFiles,
+    //   "/music/": [
+    //     "/music/introduction.md",
+    //     {
+    //       text: "Music Collection",
+    //       collapsible: false,
+    //       children: genSidebarConfig("music/collection", true),
+    //     },
+    //   ],
+    //   // "/components/": [
+    //   //   "/components/introduction.md",
+    //   //   {
+    //   //     text: "UI组件",
+    //   //     collapsible: false,
+    //   //     children: genSidebarConfig("components/UI", true),
+    //   //   },
+    //   // ],
+    //   "/oral/": [
+    //     "/oral/introduction.md",
+    //     {
+    //       text: "英语口语短文",
+    //       collapsible: false,
+    //       children: genSidebarConfig("oral/essay", true),
+    //     },
+    //   ],
+    // },
+    sidebar: sidebarConfig,
   }),
-  // themeConfig: {
-  //   lastUpdated: "Last Updated",
-  //   //编辑
-  //   repo: "jgsrty/jgsrty.github.docs",
-  //   docsDir: "docs",
-  //   docsBranch: "master",
-  //   editLinks: true,
-  //   //编辑
-  //   sidebarDepth: 3,
-  //
-  // },
+  themeConfig: {
+    lastUpdated: "Last Updated",
+    //编辑
+    repo: "jgsrty/jgsrty.github.docs",
+    docsDir: "docs",
+    docsBranch: "master",
+    editLinks: true,
+    //编辑
+    sidebarDepth: 3,
+  },
   bundler: webpackBundler({
     sass: { indentedSyntax: true },
   }),
@@ -178,3 +178,4 @@ function genSidebarConfig(dir, hasSub) {
   });
   return files;
 }
+

@@ -1,19 +1,19 @@
-const genSidebarConfig = require('./getSidebarConfig')
+const genSidebar = require('./getSideBar')
 
 module.exports = [
 	{
 		text: 'Charles',
 		collapsible: true,
-		children: genSidebarConfig('study/Base/Charles', false)
+		children: genSidebar('study/Base/Charles', false)
 	},
 	{
-		text: '2018年十一月(November)',
+		text: 'Mysql',
 		collapsible: true,
-		children: genSidebarConfig('english/2018/2018-November', false)
+		children: genSidebar('study/Base/Mysql', false)
 	},
 	{
-		text: '2018年十月(October)',
+		text: 'Python',
 		collapsible: true,
-		children: genSidebarConfig('english/2018/2018-October', false)
+		children: genSidebar('study/Base/Python', false)
 	}
 ]
