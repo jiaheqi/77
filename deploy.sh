@@ -12,10 +12,10 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
-git commit -m 'https://jgsrty.github.io'
+git commit -m 'https://jiaheqi.github.io/77/'
 
 # 如果你想要部署到 https://<USERNAME>.github.io
-git push -f git@github.com:jgsrty/jgsrty.github.io.git master
+git push -f git@jiaheqi.github.io/77 master
 
 # 如果你想要部署到 https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages

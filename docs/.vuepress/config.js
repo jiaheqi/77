@@ -4,7 +4,6 @@ const fs = require("fs");
 const routelife = require("./routes/Life.js")
 const { defaultTheme } = require("vuepress-webpack");
 const sidebarConfig =  require("./sidebarConfig");
-
 const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
 module.exports = {
   title: "77-docs",
@@ -49,7 +48,7 @@ module.exports = {
       },
       {
         text: "工作",
-        link: "/work/",
+        link: "/work/introduction",
         activeMatch: "^/work/*",
       },
       {

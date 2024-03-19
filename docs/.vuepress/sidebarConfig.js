@@ -35,5 +35,6 @@ sidebar={//左侧列表
     "/english/": englishFiles,
     "/life/": lifeFiles,
     "/study/": studyFiles,
+    "/work/": workFiles,
     };
 module.exports = sidebar;
